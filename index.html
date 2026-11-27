@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Barkah & Arvy</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link ke File CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Container Melayang Pembuka (Ukuran Disamakan dengan HP) -->
+    <div class="welcome-backdrop" id="welcomeBackdrop">
+        <div class="welcome-page" id="welcomePage">
+            <div class="welcome-overlay"></div>
+            <div class="welcome-content">
+                <p class="welcome-tag">SELAMAT DATANG</p>
+                <span class="welcome-script">The Wedding Of</span>
+                <h1>Barkah<br>& Arvy</h1>
+
+                <div class="welcome-guest">
+                    <small>Kepada Yth.</small>
+                    <h3 id="guestName">Tamu Undangan</h3>
+                </div>
+
+                <p class="welcome-msg">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir untuk memberikan doa restu.</p>
+
+                <button type="button" class="btn-lanjut" onclick="masukUndangan()">
+                    <i class="fas fa-envelope-open"></i> Lanjut
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Right Three Dots Menu -->
+    <div class="top-menu-container">
+        <button class="menu-dots-btn" id="menuDotsBtn" onclick="toggleMenu()">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <button onclick="toggleDesktopMode()">
+                <i class="fas fa-desktop" id="desktopIcon"></i> 
+                <span id="desktopText">Mode Desktop</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-btn" onclick="toggleMusic()">
+        <i id="music-icon" class="fas fa-play"></i>
+    </button>
+
+    <!-- Hero Section dengan Background Video -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="Media/Barkah&Arvy.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+        </video>
+        
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h3>The Wedding Of</h3>
+            <h1>Barkah<br>& Arvy</h1>
+            <p>Sabtu, 19 Desember 2026</p>
+        </div>
+    </section>
+
+    <!-- Ayat Section -->
+    <section class="verse">
+        <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."</p>
+        <h4>QS. Ar-Rum Ayat 21</h4>
+    </section>
+
+    <!-- Bride & Groom -->
+    <section>
+        <h2 class="section-title">Bride & Groom</h2>
+        
+        <div class="profile-card">
+            <img src="Media/Barkah.png" alt="Barkah" class="profile-img">
+            <h2>Barkah</h2>
+            <h3>Barkah Misbahul Ma'rup</h3>
+            <p class="parents-info">Putra Keempat dari bapak Amy Mulyana dan Ibu Eti</p>
+            <a href="https://www.instagram.com/barkah.m?exln=cGx0Y2Z0bWtpM2Rv" class="btn-ig" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+
+        <div class="ampersand">&</div>
+
+        <div class="profile-card">
+            <img src="Media/Arvy.png" alt="Arvy" class="profile-img">
+            <h2>Arvy</h2>
+            <h3>Arvy Nur Aeni</h3>
+            <p class="parents-info">Putri Pertama dari Bapak Suhendar dan Ibu Tini Kartini</p>
+            <a href="https://www.instagram.com/arvy.aeni?vrfl=MXBqdmlsYmJmOXNwNg==" class="btn-ig" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </section>
+
+    <!-- Countdown & Save Date -->
+    <section class="save-date-section">
+        <div class="save-date-overlay"></div>
+
+        <div class="save-date-content">
+            <h2 class="section-title" style="color: #ffffff;">Save The Date</h2>
+            
+            <div class="countdown-container">
+                <div class="time-box"><span id="days">00</span><label>Hari</label></div>
+                <div class="time-box"><span id="hours">00</span><label>Jam</label></div>
+                <div class="time-box"><span id="minutes">00</span><label>Menit</label></div>
+                <div class="time-box"><span id="seconds">00</span><label>Detik</label></div>
+            </div>
+
+            <a href="#" class="btn-action btn-custom-save">
+                <i class="fas fa-calendar-alt"></i> Save The Date
+            </a>
+
+            <div class="featured-photo-container">
+                <img src="Media/pw1.png" alt="Prewedding Barkah & Arvy" class="featured-photo">
+            </div>
+
+            <div class="event-card transparent-card">
+                <h3>Akad Nikah</h3>
+                <p>Sabtu, 19 Desember 2026</p>
+                <p>Pukul 09.00 WIB</p>
+                <p class="location-text">Perumahan Permata Sukamukti Blok D1 NO. 26 Kp Landean Girang Desa Sukamukti Kec. Katapang Kab. Bandung - Jawa Barat</p>
+                <a href="https://maps.app.goo.gl/P8L21eQAE8VWCXau7?g_st=ic" target="_blank" class="btn-action"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+            </div>
+
+            <div class="event-card transparent-card">
+                <h3>Resepsi</h3>
+                <p>Sabtu, 19 Desember 2026</p>
+                <p>Pukul 11.00 - 14.00 WIB</p>
+                <p class="location-text">Perumahan Permata Sukamukti Blok D1 NO. 26 Kp Landean Girang Desa Sukamukti Kec. Katapang Kab. Bandung - Jawa Barat</p>
+                <a href="https://maps.app.goo.gl/P8L21eQAE8VWCXau7?g_st=ic" target="_blank" class="btn-action"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Story -->
+    <section>
+        <h2 class="section-title">Our Love Story</h2>
+        
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>Asmaraloka</h3>
+                <p>Sebuah kisah yang bersemi kembali di masa sekolah dengan versi berbeda dan memilih untuk tetap tinggal.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>Tentang Bertahan</h3>
+                <p>Terlalu panjang jika harus diceritakan dari awal.. karena cinta kami bukan tentang bagaimana semuanya dimulai, tapi tentang bagaimana kami bertahan. Kami hanya dua manusia biasa, yang ditakdirkan untuk saling menggenggam, melewati badai, melewati pelangi, hingga sampai di titik ini.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>Ujian & Bukti</h3>
+                <p>Ribuan tangis, jutaan tawa menjadi saksi bagaimana kata “yakin” terus kami ucapkan untuk menguatkan hati yang sempat rapuh. Bukan sekadar janji yang terucap, tapi langkah yang terus bergerak. Hingga pada suatu hari yang penuh haru, mempertemukan dua keluarga dan menyatukan doa dalam satu restu.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>Takdir & Keyakinan</h3>
+                <p>Tidak selalu mudah, tidak setenang yang terlihat. Namun kami memilih percaya bahwa Allah tak pernah salah dalam menuliskan takdir. Dengan segala harap, kami menanti hari di mana sebuah janji suci terucap, mengikat satu jiwa dalam satu arah.
+                <br><br>
+                Menuju hari ini... akan tiba hari itu, hari di mana kami memulai perjalanan baru sebagai “kita”.
+                <br>
+                Doakan agar langkah kami selalu diliputi lembutnya takdir dan keberkahan ✨💗</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP & Ucapan -->
+    <section class="bg-alt">
+        <h2 class="section-title">RSVP & Ucapan</h2>
+        
+        <form class="rsvp-form" id="wishForm">
+            <input type="text" id="nameInput" placeholder="Nama Anda" required>
+            <select id="attendanceInput">
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+                <option value="Ragu-ragu">Ragu-ragu</option>
+            </select>
+            <textarea id="msgInput" rows="3" placeholder="Tulis Ucapan & Doa" required></textarea>
+            <button type="submit">Kirim Ucapan</button>
+        </form>
+
+        <div class="comments-list" id="commentsContainer">
+            <div class="comment-item">
+                <h5>Budi Santoso <span class="badge-hadir">✔ Hadir</span></h5>
+                <p>Selamat untuk Barkah dan Arvy! Semoga menjadi keluarga yang sakinah mawaddah warahmah.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Gift -->
+    <section>
+        <h2 class="section-title">Wedding Gift</h2>
+        <p class="gift-text">Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika ingin memberi hadiah, Anda dapat mengirimkannya secara digital.</p>
+        <button class="btn-action btn-gift" onclick="alert('Nomor Rekening BCA Barkah Misbahul Ma’rup: 006513161118'); alert('Nomor Rekening BCA Arvy Nur Aeni: 8380569176')">
+            <i class="fas fa-gift"></i> Kirim Amplop / Transfer
+        </button>
+    </section>
+
+    <!-- Gallery -->
+    <section class="bg-alt">
+        <h2 class="section-title">Wedding Gallery</h2>
+        <div class="gallery-grid">
+            <img src="Media/pw1.png" alt="Gallery 1">
+            <img src="Media/pw2.png" alt="Gallery 2">
+            <img src="Media/pw3.png" alt="Gallery 3">
+            <img src="Media/pw4.png" alt="Gallery 4">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Atas kehadiran dan doa restunya kami ucapkan terima kasih.</p>
+        <h3 class="footer-names">Barkah & Arvy</h3>
+        <p>Made with Nada</p>
+    </footer>
+
+    <!-- Link ke File JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
